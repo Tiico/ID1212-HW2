@@ -120,6 +120,7 @@ public class GameController implements GameHandler {
             case START_GAME:
                 try {
                     startGame(session);
+                    clientIO.addObjectToWrite(GameActionFeedback.HELP);
                     clientIO.addObjectToWrite(getGameInfo(session));
                 } catch (OngoingGameException e) {
                     clientIO.addObjectToWrite(GameActionFeedback.GAME_ONGOING);
@@ -160,6 +161,7 @@ public class GameController implements GameHandler {
             case INVALID_COMMAND:
                 System.out.println("Invalid command received");
                 clientIO.addObjectToWrite(GameActionFeedback.INVALID_COMMAND);
+                clientIO.addObjectToWrite(GameActionFeedback.HELP);
                 break;
             default:
                 System.out.println("This should never happen, but happened.");
