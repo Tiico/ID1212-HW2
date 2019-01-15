@@ -23,8 +23,7 @@ public class ConnectionHandler {
     private GameHandler gameHandler;
 
     /**
-     * Creates a ID1212.HW2.server socket that listens for connections and accepts them as well as
-     * delegating the connections to new threads.
+     * Creates a ID1212.HW2.server socket that listens for connections and accepts them and then registers them to our selector.
      * @param port The port to listen on.
      * @param gameHandler The <code>GameHandler</code> to be used by the connecting clients.
      */
